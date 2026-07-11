@@ -1,0 +1,8 @@
+--------------------- Створюємо папку
+mkdir deliveri-app
+
+--------------------- створюємо nest server
+nest new server
+yarn
+
+
