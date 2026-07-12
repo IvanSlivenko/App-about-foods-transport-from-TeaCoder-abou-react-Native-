@@ -61,14 +61,14 @@ npm run start:dev
 
 ------------------------------------------------------------
 
-00 : 16 : 28
+00 : 27 : 08
+
+
 
 // "dependencies":
 // "@nestjs/config": "nestjs/config",
 // "@nestjs/jwt": "nestjs/jwt",
 
-
-// import type { User } from '../../generated/prisma/models/User'
 
 
 
