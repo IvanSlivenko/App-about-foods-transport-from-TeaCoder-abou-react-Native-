@@ -22,6 +22,17 @@ npx prisma db push
 ----------------------------------------------------------- nest 
 nest g resourse auth --no-spec ------------------------------------ створюємо сутність auth
 
+yarn add class-transformer class-validator
+
+yarn add @faker-js/faker
+
+yarn add argon2
+
+yarn add nestjs/config nestjs/gwt
+
+yarn add @neastjs/passport passport passport-jwt
+
+yarn add @nestjs/common
 
 
 
@@ -33,6 +44,10 @@ nest g resourse auth --no-spec ------------------------------------ створю
 
 Схема - Сутність (controller, module, servise)
 
+dto - data transfer objects - ?
+
+Авторизація : { user, accesToken (15 хв ), refreshToken ( хв) }
+
 //////////////////////////////////////////////////////////
 
 ------------------------------------------------------------
@@ -41,11 +56,19 @@ https://youtu.be/JTKN5m6UtIY
 scripts:
 
 npm run start dev --------------- запуск проекту nest
+npm run start:dev
 
 
 ------------------------------------------------------------
 
 00 : 16 : 28
+
+// "dependencies":
+// "@nestjs/config": "nestjs/config",
+// "@nestjs/jwt": "nestjs/jwt",
+
+
+// import type { User } from '../../generated/prisma/models/User'
 
 
 
