@@ -10,7 +10,7 @@ import { AuthDto } from './dto/auth.dto'
 import { faker } from '@faker-js/faker'
 import { hash } from 'argon2'
 import { User } from '@prisma/client'
-import { RefreshTokenDto } from './dto/refresh-token.dto'
+// import { RefreshTokenDto } from './dto/refresh-token.dto'
 import { verify } from 'argon2'
 
 @Injectable()
