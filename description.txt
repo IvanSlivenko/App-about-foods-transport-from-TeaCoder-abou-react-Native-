@@ -61,13 +61,18 @@ npm run start:dev
 
 ------------------------------------------------------------
 
-00 : 27 : 08
+00 : 36 : 43
 
 
 
 // "dependencies":
 // "@nestjs/config": "nestjs/config",
 // "@nestjs/jwt": "nestjs/jwt",
+
+
+=================
+"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNtcmo2a2UzdjAwMDB1dHIwbHNyZWhsZHMiLCJpYXQiOjE3ODM5NDQ2MTksImV4cCI6MTc4Mzk0ODIxOX0.NnYr3bVYBTiOzOM-msUpJE_JS_nkson8f6I7Imrg4K4"
+=================
 
 
 
