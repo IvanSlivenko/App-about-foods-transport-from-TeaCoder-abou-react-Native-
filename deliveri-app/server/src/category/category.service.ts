@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common'
 import { PrismaService } from 'src/prisma.service'
 import { returnCategoryObject } from './return-category.object'
 import { CategoryDto } from './dto/category.dto'
+import { generateSlug } from 'src/utils/generate-slug'
 
 @Injectable()
 export class CategoryService {
@@ -49,7 +50,6 @@ export class CategoryService {
 		})
 	}
 	//updated
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	async update(id: string, dto: CategoryDto) {
 		return this.prisma.category.update({
 			where: {
@@ -57,7 +57,7 @@ export class CategoryService {
 			},
 			data: {
 				name: dto.name,
-				slug: dto.name,
+				slug: generateSlug(dto.name),
 				image: dto.image
 			}
 		})
@@ -70,5 +70,14 @@ export class CategoryService {
 		})
 		if (!category) throw new NotFoundException('Category not found')
 		return category
+	}
+
+	//deleted
+	async delete(id: string) {
+		return this.prisma.category.delete({
+			where: {
+				id
+			}
+		})
 	}
 }

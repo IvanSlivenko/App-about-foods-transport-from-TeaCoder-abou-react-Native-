@@ -34,6 +34,8 @@ yarn add @neastjs/passport passport passport-jwt
 
 yarn add @nestjs/common
 
+npm install slugify
+
 
 
 ///////////////////////////////////////////////////////////
@@ -61,7 +63,8 @@ npm run start:dev
 
 ------------------------------------------------------------
 
-00 : 49 : 13
+00 : 58 : 19
+
 
 
 
