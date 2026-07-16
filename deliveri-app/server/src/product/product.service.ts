@@ -1,8 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { PrismaService } from 'src/prisma.service'
-import { returnCategoryObject } from './return-category.object'
-import { CategoryDto } from './dto/category.dto'
+import { returnProductObject } from './return-product.object'
+import { ProductDto } from './dto/product.dto'
 import { generateSlug } from 'src/utils/generate-slug'
+import { CategoryService } from 'src/category/category.service'
 
 @Injectable()
 // export class ProductService {}
@@ -12,23 +13,46 @@ import { generateSlug } from 'src/utils/generate-slug'
 @Injectable()
 // export class CategoryService {
 export class ProductService {
-	constructor(private prisma: PrismaService) {}
+	constructor(
+		private prisma: PrismaService,
+		private categoryService: CategoryService
+	) {}
 
 	//getAll
+	async getAll(searchTerm?: string) {
+		if (searchTerm) return this.search(searchTerm)
 
-	//getById
-	async byId(id: string) {
-		const product = await this.prisma.product.findUnique({
+		return this.prisma.product.findMany({
+			select: returnProductObject,
+			orderBy: {
+				createdAt: 'desc'
+			}
+		})
+	}
+
+	async search(searchTerm: string) {
+		return this.prisma.product.findMany({
 			where: {
-				id
+				OR: [
+					{
+						name: {
+							contains: searchTerm,
+							mode: 'insensitive'
+						}
+					},
+					{
+						description: {
+							contains: searchTerm,
+							mode: 'insensitive'
+						}
+					}
+				]
 			},
 			select: returnProductObject
 		})
-		if (!product) throw new NotFoundException('Product not found')
-
-		return product
 	}
-	// getByslug
+
+	// getBySlug
 	async bySlug(slug: string) {
 		const product = await this.prisma.product.findUnique({
 			where: {
@@ -40,26 +64,54 @@ export class ProductService {
 
 		return product
 	}
+
+	// getByCategory
+	async byCategory(categorySlug: string) {
+		const products = await this.prisma.product.findMany({
+			where: {
+				category: {
+					slug: categorySlug
+				}
+			},
+			select: returnProductObject
+		})
+		if (!products) throw new NotFoundException('Products not found')
+
+		return products
+	}
 	//created
 	async create() {
 		return this.prisma.product.create({
 			data: {
 				name: '',
 				slug: '',
-				image: ''
+				image: '',
+				description: '',
+				price: 0
 			}
 		})
 	}
 	//updated
 	async update(id: string, dto: ProductDto) {
+		const { name, description, price, categoryId, image } = dto
+
+		await this.categoryService.byId(categoryId)
+
 		return this.prisma.product.update({
 			where: {
 				id
 			},
 			data: {
-				name: dto.name,
-				slug: generateSlug(dto.name),
-				image: dto.image
+				name,
+				description,
+				price,
+				slug: generateSlug(name),
+				category: {
+					connect: {
+						id: categoryId
+					}
+				},
+				image
 			}
 		})
 
