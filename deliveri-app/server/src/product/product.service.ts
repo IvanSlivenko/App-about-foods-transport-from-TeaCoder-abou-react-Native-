@@ -81,10 +81,11 @@ export class ProductService {
 	}
 	//created
 	async create() {
+		const name = `New product ${Date.now()}`
 		return this.prisma.product.create({
 			data: {
-				name: '',
-				slug: '',
+				name: name,
+				slug: generateSlug(name),
 				image: '',
 				description: '',
 				price: 0
@@ -105,6 +106,7 @@ export class ProductService {
 				name,
 				description,
 				price,
+				// image,
 				slug: generateSlug(name),
 				category: {
 					connect: {
