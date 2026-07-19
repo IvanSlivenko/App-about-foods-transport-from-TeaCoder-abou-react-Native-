@@ -8,13 +8,11 @@ yarn add prettier babel-plugin-root-import
 
 yarn add prettier babel-plugin-root-import
 
---------
-"rules": {
-        "no-duplicate-imports": "error",
-        "import/no-duplicates": "error"
-    }
---------
+yarn add @react-navigation/native
 
+npx expo install react-native-screens react-native-safe-area-context
+
+yarn add @react-navigation/stack
 
 
 ------------------------------------------------------------
@@ -28,4 +26,4 @@ yarn android --------------- запуск проекту
 
 ------------------------------------------------------------
 
-01 : 10 : 25
+01 : 27 : 51
