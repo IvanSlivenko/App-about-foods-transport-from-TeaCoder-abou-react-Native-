@@ -22,6 +22,8 @@ npx tailwindcss init
 
 yarn add react-hook-form
 
+yarn add clsx
+
 
 ------------------------------------------------------------
 https://youtu.be/JTKN5m6UtIY
@@ -34,38 +36,6 @@ yarn android --------------- запуск проекту
 
 ------------------------------------------------------------
 
-01 : 35 : 18
+01 : 43 : 21
 
 
-////--- app.json
-{
-  "expo": {
-    "name": "client_54_blank",
-    "slug": "client_54_blank",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
-  }
-}
-////---
