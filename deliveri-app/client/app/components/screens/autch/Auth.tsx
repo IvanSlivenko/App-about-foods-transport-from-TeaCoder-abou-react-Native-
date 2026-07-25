@@ -4,7 +4,7 @@ import Loader from '@/components/ui/Loader';
 import { IAuthFormData } from '@/types/auth.interface'
 import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { View, Text } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
 
 import { gStyle } from 'styles/style';
 
@@ -45,6 +45,18 @@ const Auth: FC = () => {
 
 
                     <Button onPress={handleSubmit(onSubmit)}>{isReg ? 'Sign Up' : 'Login'}</Button>
+
+                    <Pressable onPress={()=> setIsReg(!isReg)}>
+                        <Text style={gStyle.style_9}>
+                            {isReg 
+                                ? 'Already have an account ? ' 
+                                : "Don't have an account. "}
+                            <Text style={gStyle.style_10}>
+                                  {isReg ? 'Sign Up' : 'Login'}  
+                            </Text>
+
+                        </Text>
+                    </Pressable>
                     
                     </>}
 

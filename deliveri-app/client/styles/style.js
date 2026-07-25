@@ -75,6 +75,16 @@ export const gStyle = StyleSheet.create({
         textAlign: "center",   // text-center
         fontWeight: "500",     // font-medium
         fontSize: 18,          // text-lg  
+    },
+    style_9 : {
+        color: '#000000',      // text-black
+        textAlign: 'center',   // text-center
+        fontSize: 16,          // text-base
+        marginTop: 24,       // mt-6 
+    },
+    style_10 : {
+      color: '#47AA52',
+      paddingLeft: 20  
     }
 
 })
