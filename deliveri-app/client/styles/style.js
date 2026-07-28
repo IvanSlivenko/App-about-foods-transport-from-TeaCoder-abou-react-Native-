@@ -85,6 +85,16 @@ export const gStyle = StyleSheet.create({
     style_10 : {
       color: '#47AA52',
       paddingLeft: 20  
+    },
+    style_11 : {
+        backgroundColor: '#ffffff',
+        width: '100%',
+        borderRadius: 8,
+        padding: 16,
+        paddingTop: 10,
+        paddingHorizontal: 16,
+        marginVertical: 6,   /* my-1.5 = 6px */
+
     }
 
 })
