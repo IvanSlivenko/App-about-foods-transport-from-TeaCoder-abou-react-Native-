@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, TextInput } from 'react-native'
 import { IFild } from './fild.interface'
 import { Controller } from 'react-hook-form'
 import { gStyle } from 'styles/style'
@@ -19,8 +19,21 @@ const Field = <T extends Record<string, any>>({
                 field: {value, onChange, onBlur}, 
                 fieldState: {error}
                 }) => <>
-                <View style={gStyle.style_11}> </View>
-                {/* bg-white w-full, rounded-lg, pd-4 pt-2.5 px-4 my-1.5*/}
+                <View  style={error ? gStyle.style_12 : gStyle.style_11}> 
+
+                    <TextInput 
+                        autoCapitalize='none' onChangeText={onChange} 
+                        onBlur={onBlur}
+                        value={(value || '').toString()} style={gStyle.style_13}
+                        placeholderTextColor='#6A6A6A'
+                        {...rest}
+                        />
+                </View>
+                {error && (
+                    <Text style={gStyle.style_14}>{error.message}</Text>
+                )}
+
+
             </>}        
         />
     )

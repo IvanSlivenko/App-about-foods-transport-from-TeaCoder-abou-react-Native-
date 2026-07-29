@@ -93,8 +93,23 @@ export const gStyle = StyleSheet.create({
         padding: 16,
         paddingTop: 10,
         paddingHorizontal: 16,
-        marginVertical: 6,   /* my-1.5 = 6px */
+        marginVertical: 6, 
+        borderWidth: 1,
+        borderColor: '#9ca3af',  /* my-1.5 = 6px */
 
+    },
+    style_12 : {
+       borderColor: '#ef4444', // border-red-500
+        
+    },
+    style_13 : {
+        color: '#000000',
+        fontSize: 16,
+        lineHeight: 24,
+    },
+    style_14 : {
+        color: '#ef4444'
     }
+
 
 })
