@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { View, Text, Pressable } from 'react-native'
 
 import { gStyle } from 'styles/style';
+import AuthFields from './AuthFields';
 
 const Auth: FC = () => {
     
@@ -42,6 +43,7 @@ const Auth: FC = () => {
 
                     {isLoading ? <Loader/> : <> 
                             {/* Auth FieldS */}
+                            <AuthFields control={control}/>
 
 
                     <Button onPress={handleSubmit(onSubmit)}>{isReg ? 'Sign Up' : 'Login'}</Button>
