@@ -1,9 +1,33 @@
-import { PropsWithChildren } from 'react'
+import { createContext, FC, PropsWithChildren, useEffect, useState } from 'react'
 import { View } from 'react-native'
+import { IContext, TypeUserState } from './auth-provider.interface'
 
-interface Props extends PropsWithChildren {}
+export const AuthContext = createContext({} as IContext)
 
-const AuthProvider = ({ children }: Props) => {
+let ignor = Splash
+
+const AuthProvider: FC<PropsWithChildren<unknown>> = ({children}) => {
+    
+    const [user, setUser] = useState<TypeUserState>(null)
+    
+    useEffect(()=>{
+        let mounted = true
+
+        const checkAccesToken = async ()=>{
+            try {
+                
+            } catch {
+                
+            } finally {
+
+            }
+        }
+
+        return ()=>{
+            mounted=false
+        }
+    },[])
+
     return (
         <View>
             {children}

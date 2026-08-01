@@ -24,6 +24,7 @@ yarn add react-hook-form
 
 yarn add clsx
 
+yarn expo install expo-splash-screen
 
 ------------------------------------------------------------
 https://youtu.be/JTKN5m6UtIY
@@ -37,6 +38,6 @@ yarn android --------------- запуск проекту
 
 ------------------------------------------------------------
 
-01 : 57 : 09
+02 : 01 : 21
 
 
