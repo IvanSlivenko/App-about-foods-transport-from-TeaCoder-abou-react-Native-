@@ -20,7 +20,7 @@ export const gStyle = StyleSheet.create({
      alignItems: "center",
      justifyContent: "center",
      flex:1,
-    //  backgroundColor: 'gray',
+     backgroundColor: '#303030',
 
 
     },
@@ -36,7 +36,8 @@ export const gStyle = StyleSheet.create({
         justifyContent: "center",
         // backgroundColor: 'gray',
 
-        color: "black",
+        // color: "black",
+        color: "#fff",
         fontSize: 40,
         
         paddingHorizontal: 8,
@@ -77,7 +78,8 @@ export const gStyle = StyleSheet.create({
         fontSize: 18,          // text-lg  
     },
     style_9 : {
-        color: '#000000',      // text-black
+        // color: '#000000',      // text-black
+        color: '#fff', 
         textAlign: 'center',   // text-center
         fontSize: 16,          // text-base
         marginTop: 24,       // mt-6 
@@ -109,6 +111,21 @@ export const gStyle = StyleSheet.create({
     },
     style_14 : {
         color: '#ef4444'
+    },
+    style_15 : {
+        marginTop: 50,
+        color: "#white"
+    },
+    style_16 : {
+        backgroundColor: "#fff",
+        padding: 10,
+        borderRadius: 8,
+        width: 300
+    },
+    style_17: {
+      // items-center w-[20%]
+      alignItems: 'center',
+    width: '20%',  
     }
 
 

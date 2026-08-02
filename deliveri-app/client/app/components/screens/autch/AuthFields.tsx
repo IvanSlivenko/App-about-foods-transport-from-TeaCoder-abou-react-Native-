@@ -2,8 +2,8 @@ import Field from '@/components/ui/fild/Field'
 import { IAuthFormData } from '@/types/auth.interface'
 import { FC } from 'react'
 import { Control } from 'react-hook-form'
-import { View, Text } from 'react-native'
 import { validEmail } from './email.regex'
+import { gStyle } from 'styles/style'
 
 interface IAuthFields {
     control: Control<IAuthFormData>
@@ -13,6 +13,7 @@ const AuthFields: FC<IAuthFields> = ({control}) => {
     return (
         <>
         <Field<IAuthFormData>
+            // style={gStyle.style_16}
             placeholder='Enter email'
             control = {control}
             name='email'
@@ -27,6 +28,7 @@ const AuthFields: FC<IAuthFields> = ({control}) => {
             />
 
             <Field<IAuthFormData>
+            // style={gStyle.style_16}
             placeholder='Enter password'
             control = {control}
             name='password'

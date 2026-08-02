@@ -1,23 +1,21 @@
 import { StatusBar } from 'expo-status-bar'
 import Navigation from '@/navigation/Navigation'
-
-
-
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import { View, Text } from 'react-native'
 
-import { gStyle } from 'styles/style';
+import AuthProvider from '@/providers/auth/AuthProvider';
 
 export default function App() {
+	// console.log('App');
 	return (
 	<>
-	<SafeAreaProvider>
-		<Navigation/>
-		{/* <View style={gStyle.test}>
-      <Text style={gStyle.test_2}>test</Text>
-    </View> */}
-	</SafeAreaProvider>
-	<StatusBar style="light"/>
+	<AuthProvider>
+		<SafeAreaProvider>
+			<Navigation/>
+		</SafeAreaProvider>
+		<StatusBar style="light"/>
+	</AuthProvider>
 	</>
 	)
 }
+
+

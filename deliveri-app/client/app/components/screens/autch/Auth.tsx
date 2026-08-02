@@ -11,6 +11,8 @@ import AuthFields from './AuthFields';
 
 const Auth: FC = () => {
     
+    // console.log('Auth');
+
     const [isReg, setIsReg] = useState(false)
 
     const {handleSubmit, reset, control} = useForm<IAuthFormData>({
