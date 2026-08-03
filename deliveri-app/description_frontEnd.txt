@@ -26,6 +26,12 @@ yarn add clsx
 
 yarn expo install expo-splash-screen
 
+yarn add react-native-toast-message
+
+yarn add axios
+
+yarn add bable-plugin-inline-dotenv
+
 ------------------------------------------------------------
 https://youtu.be/JTKN5m6UtIY
 
@@ -38,6 +44,6 @@ yarn android --------------- запуск проекту
 
 ------------------------------------------------------------
 
-02 : 08 : 31
+02 : 22 : 05
 
 

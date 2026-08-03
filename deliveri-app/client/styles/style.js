@@ -126,6 +126,23 @@ export const gStyle = StyleSheet.create({
       // items-center w-[20%]
       alignItems: 'center',
     width: '20%',  
+    },
+    style_18 : {
+      
+        paddingTop: 20,          // pt-5
+        paddingHorizontal: 8,     // px-2
+
+        flexDirection: 'row',     // flex-row
+        justifyContent: 'space-between', // justify-between
+        alignItems: 'center',     // items-center
+
+        width: '100%',            // w-full
+
+        borderTopWidth: 1,        // border-t
+        borderTopColor: '#bbbbbb',// border-t-[#bbbbbb]
+
+        backgroundColor: '#ffffff' // bg-white
+
     }
 
 

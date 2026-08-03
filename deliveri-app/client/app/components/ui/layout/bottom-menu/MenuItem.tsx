@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { IMenuItem, TypeNavigate } from './menu.interface'
 import { gStyle } from 'styles/style'
 import { Feather } from'@expo/vector-icons'
+import { Pressable } from 'react-native'
 
 interface IMenuItemProps {
     item: IMenuItem
