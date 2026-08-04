@@ -32,6 +32,12 @@ yarn add axios
 
 yarn add bable-plugin-inline-dotenv
 
+yarn add expo-secure-store
+
+yarn add @react-native-async-storage/async-storage
+
+
+
 ------------------------------------------------------------
 https://youtu.be/JTKN5m6UtIY
 
@@ -44,6 +50,6 @@ yarn android --------------- запуск проекту
 
 ------------------------------------------------------------
 
-02 : 22 : 05
+02 : 25 : 41
 
 

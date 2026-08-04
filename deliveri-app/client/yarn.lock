@@ -1181,6 +1181,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@react-native-async-storage/async-storage@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-3.1.1.tgz#051caeb93919260041e53165f1b6c8a975b15105"
+  integrity sha512-z+PnLz1n6ECKhgoHZHkfc+dijXZEyZnNFSajbtE0NEbsJhmX8x9GlOeiMQIKX2E4DUqPSgfIh4FYBv1M49KgPQ==
+  dependencies:
+    idb "8.0.3"
+
 "@react-native/assets-registry@0.86.0":
   version "0.86.0"
   resolved "https://registry.yarnpkg.com/@react-native/assets-registry/-/assets-registry-0.86.0.tgz#560e78135969d1198aabfdc4ae74faae336463d0"
@@ -2894,6 +2901,11 @@ expo-modules-jsi@~57.0.3:
   resolved "https://registry.yarnpkg.com/expo-modules-jsi/-/expo-modules-jsi-57.0.3.tgz#0a8607293c0231551ea3112d462505edbe784cd5"
   integrity sha512-B+iXJCC5OIXjFKkLLSY2DZ8BGS+hC3PBTrALpV43pHqhXqqZrRH3uTEylZgsoKQO8N8tjmjAua2ucTFHtr1o0w==
 
+expo-secure-store@^57.0.1:
+  version "57.0.1"
+  resolved "https://registry.yarnpkg.com/expo-secure-store/-/expo-secure-store-57.0.1.tgz#746892729ca7a78513a1c220b48c1f3f803af413"
+  integrity sha512-tLa1VmSadOq19mA/dwkl99RbHyjLE0T1qqBYMY3/OsguZTI+rlrDy/DDJjupqlVtmr95hD7o1pYqx5aL+B4YMA==
+
 expo-server@^57.0.1:
   version "57.0.1"
   resolved "https://registry.yarnpkg.com/expo-server/-/expo-server-57.0.1.tgz#2362bf576e97250490209ac550c2610b88ba4cc1"
@@ -3397,6 +3409,11 @@ https-proxy-agent@^7.0.5:
   dependencies:
     agent-base "^7.1.2"
     debug "4"
+
+idb@8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/idb/-/idb-8.0.3.tgz#c91e558f15a8d53f1d7f53a094d226fc3ad71fd9"
+  integrity sha512-LtwtVyVYO5BqRvcsKuB2iUMnHwPVByPCXFXOpuU96IZPPoPN6xjOGxZQ74pgSVVLQWtUOYgyeL4GE98BY5D3wg==
 
 ignore@^5.2.0, ignore@^5.3.1:
   version "5.3.2"
