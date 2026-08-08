@@ -2,7 +2,8 @@ import { API_URL, getAuthUrl } from "@/config/api.config"
 import { EnumSecureStore, IAuthResponse } from "@/types/auth.interface"
 import axios from "axios"
 import { getItemAsync } from "expo-secure-store"
-import { saveToStorage } from "./helper.api"
+import { saveToStorage } from "../auth/auth.helper"
+
 
 export const getNewTokens = async () => {
     try {

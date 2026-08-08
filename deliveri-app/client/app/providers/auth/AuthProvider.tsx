@@ -2,6 +2,7 @@ import { createContext, FC, PropsWithChildren, useEffect, useState } from 'react
 import { IContext, TypeUserState } from './auth-provider.interface'
 import * as SplashScreen from 'expo-splash-screen';
 import { IUser } from '@/types/user.interface';
+import { getAccessToken, getUserFromStorage } from '@/services/auth/auth.helper';
 
 export const AuthContext = createContext({} as IContext)
 
@@ -14,11 +15,16 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({children}) => {
     
     useEffect(()=>{
         // console.log('useEffect');
-        let mounted = true
+        let IsMounted = true
 
         const checkAccesToken = async ()=>{
             try {
-                
+               const accessToken  = await getAccessToken()
+               
+               if(accessToken) {
+                const user = await getUserFromStorage()
+                if(IsMounted) setUser(user)
+               }
             } catch {
                 
             } finally {
@@ -29,7 +35,7 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({children}) => {
         let ignore = checkAccesToken()
 
         return ()=>{
-            mounted=false
+            IsMounted=false
         }
     },[])
 

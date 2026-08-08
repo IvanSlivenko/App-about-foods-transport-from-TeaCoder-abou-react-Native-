@@ -36,6 +36,8 @@ yarn add expo-secure-store
 
 yarn add @react-native-async-storage/async-storage
 
+yarn add @tanstack/react-query
+
 
 
 ------------------------------------------------------------
