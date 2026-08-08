@@ -1,6 +1,8 @@
 import { API_URL } from "@/config/api.config";
 import axios from "axios";
-import { getAccessToken } from "./helper.api";
+import { deleteTokensStorage, getAccessToken } from "./helper.api";
+import { errorCatch } from "./error.api";
+import { getNewTokens } from "./helper.auth";
 
 const instance = axios.create({
     baseURL: API_URL,
@@ -17,4 +19,31 @@ instance.interceptors.request.use(async (config) => {
     
     return config
 })
+
+instance.interceptors.response.use(
+    config => config,
+    async error => {
+        const originalRequest = error.config
+
+        if(
+            (error.response.status === 401 ||
+                errorCatch(error) === 'jwt expired' ||
+                errorCatch(error) === 'jwt must bi provided') &&
+                error.config &&
+                !error.config._isRetly
+            ){
+                originalRequest._isRetly = true
+                try {
+                    await getNewTokens()
+                    return instance.request(originalRequest)
+                } catch (error) {
+                    if(errorCatch(error) === 'jwt expired')
+                        await deleteTokensStorage()
+                }
+            }
+            
+        throw error
+    }
+)
+export default instance
 
