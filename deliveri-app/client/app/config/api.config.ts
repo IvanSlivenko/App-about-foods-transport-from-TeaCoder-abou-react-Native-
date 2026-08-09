@@ -1,5 +1,11 @@
 export const SERVER_URL = process.env.SERVER_URL
+
+// console.log('================ API CONFIG ================')
+// console.log('SERVER_URL:', SERVER_URL)
+
 export const API_URL = `${SERVER_URL}/api`
+
+// console.log('API_URL:', API_URL)
 
 export const getAuthUrl = (string: string) => `/auth${string}`
 export const getUsersUrl = (string: string) => `/users${string}`

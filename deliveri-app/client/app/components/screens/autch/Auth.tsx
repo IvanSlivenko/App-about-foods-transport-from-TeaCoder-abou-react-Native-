@@ -8,6 +8,7 @@ import { View, Text, Pressable } from 'react-native'
 
 import { gStyle } from 'styles/style';
 import AuthFields from './AuthFields';
+import { useAuthMutation } from './useAuthMutation';
 
 const Auth: FC = () => {
     
@@ -19,12 +20,22 @@ const Auth: FC = () => {
         mode: 'onChange'
     })
 
-    const onSubmit: SubmitHandler<IAuthFormData> = data => {
-        console.log("data from onSubmit", data);
-        
-    }
+    const {isLoading, loginSync, registerSync} = useAuthMutation(reset)
 
-    const isLoading=false
+    const onSubmit: SubmitHandler<IAuthFormData> = data => {
+       console.log('--------------------------------------------onSubmit in Auth.tsx')
+
+        if(isReg) {registerSync(data)
+            console.log('------------------------------------------- registerSync in onSubmit in Auth.tsx')}
+        else {loginSync(data)
+            console.log('------------------------------------------- loginSync in onSubmit in Auth.tsx')}
+        }    
+
+
+        
+    // }
+
+  
 
     return (
        

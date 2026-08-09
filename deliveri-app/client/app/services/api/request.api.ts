@@ -8,6 +8,17 @@ export const request = async<T> (config: AxiosRequestConfig) => {
     
     
     const onError =(error: AxiosError<T>)=>{
+        // console.log("-------------------------------- onError in request.api.ts");
+
+        // console.log('================ AXIOS ERROR ================')
+        // console.log('message:', error.message)
+        // console.log('code:', error.code)
+        // console.log('name:', error.name)
+        // console.log('response:', error.response)
+        // console.log('request:', error.request)
+        // console.log('config:', error.config)
+        // console.log('==============================================')
+        
         Toast.show({
             type: 'error',
             text1: 'RequestEror',

@@ -8,7 +8,7 @@ import { UseFormReset } from "react-hook-form";
 export const useAuthMutation = (reset: UseFormReset<IAuthFormData>) => {
     const { setUser } = useAuth()
 
-    const {mutate:loginSync, isPending: isLoginLoading } = useMutation({
+    const {mutate: loginSync, isPending: isLoginLoading } = useMutation({
         mutationKey: ['login'],
         mutationFn: ({email, password}: IAuthFormData) => AuthService.
         main('login', email, password),
@@ -19,8 +19,8 @@ export const useAuthMutation = (reset: UseFormReset<IAuthFormData>) => {
     })
 
 
-    const {mutate:registerSync, isPending: isRegisterLoading } = useMutation({
-        mutationKey: ['login'],
+    const {mutate: registerSync, isPending: isRegisterLoading } = useMutation({
+        mutationKey: ['register'],
         mutationFn: ({email, password}: IAuthFormData) => AuthService.
         main('reg', email, password),
         onSuccess(data) {
@@ -29,7 +29,9 @@ export const useAuthMutation = (reset: UseFormReset<IAuthFormData>) => {
         }  
     })
 
-    return useMemo(()=> {},[
-        isLoginLoading, isRegisterLoading
+    return useMemo(()=> ({
+        loginSync, registerSync, isLoading: isLoginLoading || isRegisterLoading
+    }),[
+        isLoginLoading, isRegisterLoading, loginSync, registerSync
     ])
 }
